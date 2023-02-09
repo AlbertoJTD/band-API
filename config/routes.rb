@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
-  resources :bands do
-    resources :members
+  #root "api/v1/bands#index"
+  namespace :api do
+    namespace :v1 do
+      resources :bands do
+        resources :members
+      end
+    end
   end
-  # root "articles#index"
+  
 end
